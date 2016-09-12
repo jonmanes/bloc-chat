@@ -1,4 +1,56 @@
-.hero-title {
-    font-size: 10px;
-    color: black;
+html {
+     height: 100%; 
+     font-size: 100%;
+ }
+body { 
+    font-family: 'Open Sans'; 
+    color: black;             
+    min-height: 100%; 
+}  
+
+ .navbar {
+     position: absolute;
+     padding: 0.5rem;
+     background-color: rgba(204, 202, 204, 0.5);
+     z-index: 1;
+     float: left;
+     height: 100%;
+     width: 20%;
+     min-width: 200px;
+     font-family: 'Open Sans';
+     font-size: 2rem;
+     font-weight: 700;
+     color: #4a4949;
+ }
+ 
+ .navbar .logo {
+     position: inherit;
+     top: 2rem;
+     left: 2rem;
+     cursor: pointer;
+ }
+
+.navbar .room-list {
+     display: inline;
+     position: inherit;
+     top: 5rem;
+     left: 2rem;
+     height: 100px;
+     color: white;
+     text-decoration: none;
 }
+
+.navbar .room {
+     position: inherit;
+     height: 100%;
+     color: #797878;
+     font-size: 1rem;
+     font-weight: 500;
+     text-transform: uppercase;
+     text-decoration: none;
+     cursor: pointer;
+}
+
+.room-list .room:hover {
+     color: rgb(86, 133, 242);
+ }

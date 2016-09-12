@@ -1,1 +1,12 @@
-<h1 class="hero-title">{{ home.heroTitle }}</h1>
+
+<section class="navbar"> <!-- navigation bar -->
+             <a class="logo">Bloc Chat</a>
+             <table class="room-list">
+                <tr class="room" ng-repeat="room in home.room.all track by $index">
+                     <td >
+                        <a >{{ room.$value }}</a>
+                     </td>
+                 </tr>
+             </table>
+</section>
+
