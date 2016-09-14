@@ -6,9 +6,18 @@ body {
     font-family: 'Open Sans'; 
     color: black;             
     min-height: 100%; 
-}  
+} 
 
- .navbar {
+a {
+    color: #4a4949;
+}
+
+a:focus, a:hover {
+    color: #4a4949;
+    text-decoration: none;
+}
+
+ .main-list {
      position: absolute;
      padding: 0.5rem;
      background-color: rgba(204, 202, 204, 0.5);
@@ -23,24 +32,35 @@ body {
      color: #4a4949;
  }
  
- .navbar .logo {
+ .main-list .site-name {
      position: inherit;
      top: 2rem;
      left: 2rem;
      cursor: pointer;
  }
 
-.navbar .room-list {
-     display: inline;
+.main-list .add-room {
      position: inherit;
      top: 5rem;
+     left: 2rem;
+     cursor: pointer;
+     font-family: 'Open Sans';
+     font-size: 1rem;
+     font-weight: 400;
+     color: #4a4949;
+}
+
+.main-list .room-list {
+     display: inline;
+     position: inherit;
+     top: 8rem;
      left: 2rem;
      height: 100px;
      color: white;
      text-decoration: none;
 }
 
-.navbar .room {
+.main-list .room {
      position: inherit;
      height: 100%;
      color: #797878;
@@ -51,6 +71,81 @@ body {
      cursor: pointer;
 }
 
-.room-list .room:hover {
-     color: rgb(86, 133, 242);
+.room-list .room a:hover {
+     color: #337ab7;
  }
+
+.modal-header {
+     background-color: rgba(204, 202, 204, 0.5);
+}
+.modal-body {
+     background-color: rgba(204, 202, 204, 0.5);
+}
+
+.modal-footer {
+     background-color: rgba(204, 202, 204, 0.5);
+}
+.modal-title {
+     font-family: 'Open Sans';
+     font-size: 1rem;
+     font-weight: 700;
+     color: #4a4949;
+}
+
+.form-control {
+     font-family: 'Open Sans';
+     font-size: 1rem;
+     font-weight: 300;
+     color: #4a4949;
+}
+
+.btn-add-room {
+    font-family: 'Open Sans';
+    font-size: 1rem;
+    font-weight: 400;
+    color: #4a4949;
+    background-color: #fff;
+    border-color: #4a4949;
+}
+
+.btn-add-room:hover {
+    color: #4a4949;
+    background-color: rgba(204, 202, 204, 0.5);
+    border-color: #4a4949;
+}
+
+.btn-add-room:active {
+    color: #4a4949;
+    background-color: rgba(204, 202, 204, 0.5);
+    border-color: #4a4949;
+}
+
+.btn-create {
+    font-family: 'Open Sans';
+    font-size: 1rem;
+    font-weight: 400;
+    color: #fff;
+    background-color: #4a4949;
+    border-color: rgba(204, 202, 204, 0.5);
+}
+
+.btn-create:hover {
+    color: #4a4949;
+    background-color: rgba(204, 202, 204, 0.5);
+    border-color: #4a4949;
+}
+
+.btn-cancel {
+    font-family: 'Open Sans';
+    font-size: 1rem;
+    font-weight: 400;
+    color: #4a4949;
+    background-color: #fff;
+    border-color: #4a4949;
+}
+
+.btn-cancel:hover {
+    color: #4a4949;
+    background-color: rgba(204, 202, 204, 0.5);
+    border-color: #4a4949;
+}

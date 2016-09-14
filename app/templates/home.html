@@ -1,12 +1,29 @@
 
-<section class="navbar"> <!-- navigation bar -->
-             <a class="logo">Bloc Chat</a>
+<section class="main-list">
+             <a class="site-name">Bloc Chat</a>
+             <div class="add-room" ng-controller="ModalCtrl as modal">
+                <button class="btn btn-add-room" ng-click="modal.openAddRoomModal()">Add Room</button>
+             </div>
              <table class="room-list">
                 <tr class="room" ng-repeat="room in home.room.all track by $index">
                      <td >
-                        <a >{{ room.$value }}</a>
+                        <a >{{ room.name }}</a>
                      </td>
                  </tr>
              </table>
 </section>
 
+<script type="text/ng-template" id="addRoomModal.html">
+    <div class="modal-header">
+        <h3 class="modal-title">Create New Room</h3>
+    </div>
+    <div class="modal-body">
+        <div class="form-group" >
+            <input type="text" placeholder="Enter a room name..." class="form-control" ng-model="newRoom.name">
+        </div>
+    </div>
+    <div class="modal-footer">
+        <button class="btn btn-cancel" type="button" ng-click="cancel()">Cancel</button>
+        <button class="btn btn-create" type="button" ng-click="create(newRoom)">Create</button>
+    </div>
+</script>
