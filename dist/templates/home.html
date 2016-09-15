@@ -1,17 +1,32 @@
 
-<section class="main-list">
-             <a class="site-name">Bloc Chat</a>
-             <div class="add-room" ng-controller="ModalCtrl as modal">
-                <button class="btn btn-add-room" ng-click="modal.openAddRoomModal()">Add Room</button>
-             </div>
-             <table class="room-list">
-                <tr class="room" ng-repeat="room in home.room.all track by $index">
-                     <td >
-                        <a >{{ room.name }}</a>
-                     </td>
-                 </tr>
-             </table>
-</section>
+<div class="main-list">
+    <a class="site-name">Bloc Chat</a>
+    <div class="add-room" ng-controller="ModalCtrl as modal">
+        <button class="btn btn-add-room" ng-click="modal.openAddRoomModal()">Add Room</button>
+    </div>
+    <table class="room-list">
+        <tr class="room" ng-repeat="room in home.room.all track by $index">
+            <td >
+                <a ng-click="home.selectRoom(room)">{{ room.name }}</a>
+            </td>
+        </tr>
+    </table>
+</div>
+
+<div class="room-body">
+    <div class="room-title">{{home.selectedRoom.name}}
+        <table>
+            <tr class="room-messages" ng-repeat="message in home.messages" ng-class-odd="'alt-bc-odd'">
+                <td width="600">
+                    <strong>{{ message.username }}</strong> : {{ message.content }}
+                </td>
+                <td>
+                    <i>({{ message.sentAt }})</i> 
+                </td>
+            </tr>
+        </table>
+    </div>
+</div>
 
 <script type="text/ng-template" id="addRoomModal.html">
     <div class="modal-header">
