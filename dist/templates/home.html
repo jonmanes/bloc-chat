@@ -27,6 +27,10 @@
         </table>
     </div>
 </div>
+<div class="add-message">
+        <input type="text" placeholder="Enter a message..." class="form-control" ng-model="newMessage">
+        <button class="btn btn-add-room" ng-click="home.sendMessage(newMessage)">Send</button>
+</div>
 
 <script type="text/ng-template" id="addRoomModal.html">
     <div class="modal-header">
