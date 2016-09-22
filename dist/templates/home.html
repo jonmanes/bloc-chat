@@ -21,7 +21,7 @@
                     <strong>{{ message.username }}</strong> : {{ message.content }}
                 </td>
                 <td>
-                    <i>({{ message.sentAt }})</i> 
+                    <i>({{ message.sentAt | timecode }})</i> 
                 </td>
             </tr>
         </table>
