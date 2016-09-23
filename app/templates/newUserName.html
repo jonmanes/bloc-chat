@@ -1,14 +1,20 @@
 <form name="Form">
     <div class="modal-header">
-        <h3 class="modal-title">Enter a Username</h3>
+        <h3 class="modal-title">Please login</h3>
     </div>
     <div class="modal-body">
         <div class="form-group" >
-            <input name="userName" type="text" placeholder="....." class="form-control" ng-model="userName" required />
+            <input name="userName" type="text" placeholder="Email" class="form-control" ng-model="userName" required />
+            <input name="password" type="text" placeholder="Password" class="form-control" ng-model="password" required />
+            <div class="form-group" >
+                To create an account please enter your information above and click Create New Account.
+            </div>
         </div>
     </div>
 </form>
 
 <div class="modal-footer">
-    <button class="btn btn-primary" type="button" ng-disabled="Form.$invalid" ng-click="create()">Save</button>
+    <button class="btn btn-primary" type="button" ng-disabled="Form.$invalid" ng-click="login(userName, password)">login</button>
+    <button class="btn btn-secondary" type="button" ng-disabled="Form.$invalid" ng-click="create(userName, password)">Create new account</button>
+
 </div>
