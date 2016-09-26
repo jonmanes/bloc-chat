@@ -1,5 +1,5 @@
 (function() {
-  function CookieCtrl($cookies, $uibModal) {
+  function CookieCtrl(Auth, $cookies, $uibModal) {
     var currentUser = $cookies.get('blocChatCurrentUser');
     if (!currentUser || currentUser === '') {
 
@@ -7,24 +7,17 @@
             templateUrl: '/templates/newUserName.html',
             controller: function($scope, $uibModalInstance) {
                 $scope.login = function(userName, password) {
-                    firebase.auth().signInWithEmailAndPassword(userName, password).then(function(firebaseUser){
-                        alert("Signed in as: "+firebaseUser.email);
-                    }).catch(function(error) {
-                        alert("Invalid Login: "+error.message);
-                    });
+                    Auth.loginUser(userName, password);
                     firebase.auth().onAuthStateChanged(function(user) {
                       if (user) {
-                        $uibModalInstance.close(userName);
+                        $uibModalInstance.close();
                       };
                     });
                 };
                 $scope.create = function(userName, password) {
-                    firebase.auth().createUserWithEmailAndPassword(userName, password).then(function(firebaseUser){
-                        alert("New account created for: "+firebaseUser.email);
-                    }).catch(function(error) {
-                        alert("error: "+error.message);
-                    });
+                    Auth.createNewAccount(userName, password);
                 };
+
             },
                 backdrop  : 'static',
                 keyboard  : false,
@@ -42,5 +35,5 @@
 
   angular
     .module('blocChat')
-    .run(['$cookies', '$uibModal', CookieCtrl]);
+    .run(['Auth', '$cookies', '$uibModal', CookieCtrl]);
 })();
